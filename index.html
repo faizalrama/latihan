@@ -1,15 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>coba coba</title>
+    <link rel="stylesheet" href="gaya.css">
 </head>
 <body>
-    <form action="">
-        <input type="text" name="" id="angka1" placeholder="masukan">
-        <input type="text" name="" id="angka2" placeholder="masukan nilai">
-        <button onclick="latihan"></button>
+    <form onsubmit="return false;">
+        <input type="number" id="angka1" placeholder="masukkan angka">
+        <button type="button" onclick="hasil()">Hasil</button>
+        <p id="result" class="hasil"></p>
     </form>
+    <script>
+        function hasil(){
+            const angka1Input = document.getElementById("angka1");
+            const a = Number(angka1Input.value);
+            const result = document.getElementById("result");
+
+            if (a === 0) {
+                result.innerHTML = a + "   Angka tersebut nol";
+            } else if (a > 0) {
+                result.innerHTML = a + "   Angka tersebut positif";
+            } else if (a < 0) {
+                result.innerHTML = "(" + a +")"+ "  Angka tersebut negatif";
+            }
+        }
+    </script>
 </body>
 </html>
